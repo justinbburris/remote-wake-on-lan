@@ -10,6 +10,8 @@ os.environ.update({
     'AUTH_PASSWORD': 'testpass'
 })
 
+# Import the main module directly to fix the coverage warning
+import remote_wake_on_lan.main
 from remote_wake_on_lan.main import app
 
 # Test client
