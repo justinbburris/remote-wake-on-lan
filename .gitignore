@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# IDE settings
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+
+# Docker volumes
+docker-volumes/

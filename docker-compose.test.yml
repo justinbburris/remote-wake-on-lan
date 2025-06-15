@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  test:
+    build:
+      context: .
+      args:
+        REQUIREMENTS: requirements-dev.txt
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+      - TARGET_MAC=00:11:22:33:44:55
+      - AUTH_USERNAME=testuser
+      - AUTH_PASSWORD=testpass
+    command: pytest --cov=main tests/
