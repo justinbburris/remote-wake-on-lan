@@ -1,11 +1,32 @@
+# Git and environment
 .git
 .gitignore
 .env
-__pycache__
+
+# Python cache and bytecode
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
+
+# Virtual environments
 env/
 venv/
 .venv/
+
+# Test and coverage artifacts
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Docs and markdown
+*.md
+
+# Tests
+tests/
