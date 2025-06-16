@@ -40,9 +40,7 @@ This guide covers how to install and configure the Remote Wake-on-LAN service on
 
    services:
      wake-on-lan:
-       image: ghcr.io/your-username/remote-wake-on-lan:latest
-       ports:
-         - "8000:8000"
+       image: ghcr.io/justinbburris/remote-wake-on-lan:latest
        environment:
          - TARGET_MAC=\${TARGET_MAC}
          - AUTH_USERNAME=\${AUTH_USERNAME}
