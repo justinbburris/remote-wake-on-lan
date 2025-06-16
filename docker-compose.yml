@@ -7,5 +7,6 @@ services:
       - TARGET_MAC=${TARGET_MAC}
       - AUTH_USERNAME=${AUTH_USERNAME}
       - AUTH_PASSWORD=${AUTH_PASSWORD}
+      - SECRET_KEY=${SECRET_KEY:-$(openssl rand -hex 32)}
     restart: unless-stopped
     network_mode: "host"  # Required for Wake-on-LAN to work properly

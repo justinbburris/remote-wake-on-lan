@@ -2,3 +2,6 @@ fastapi==0.109.2
 uvicorn==0.27.1
 wakeonlan==3.0.0
 python-dotenv==1.0.1
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.9
+itsdangerous==2.1.2
