@@ -5,6 +5,7 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     net-tools \
+    iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
 # Add build argument for requirements file
@@ -20,8 +21,8 @@ RUN pip install --no-cache-dir -r $REQUIREMENTS
 # Copy application code
 COPY remote_wake_on_lan/ remote_wake_on_lan/
 
-# Create a non-root user
-RUN useradd -m appuser
+# Create a non-root user with necessary permissions
+RUN useradd -m -G netdev appuser
 USER appuser
 
 # Expose the port the app runs on
