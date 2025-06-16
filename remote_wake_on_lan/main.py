@@ -28,6 +28,7 @@ async def root(request: Request):
         <html>
             <head>
                 <title>Remote Wake-on-LAN - Login</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <style>
                     body {
                         font-family: Arial, sans-serif;
@@ -35,26 +36,33 @@ async def root(request: Request):
                         margin: 0 auto;
                         padding: 20px;
                         text-align: center;
+                        min-height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
                     }
                     form {
                         background: #f9f9f9;
                         padding: 20px;
                         border-radius: 8px;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        width: 100%;
+                        box-sizing: border-box;
                     }
                     input {
                         width: 100%;
-                        padding: 8px;
+                        padding: 12px;
                         margin: 10px 0;
                         border: 1px solid #ddd;
                         border-radius: 4px;
                         box-sizing: border-box;
+                        font-size: 16px;
                     }
                     button {
                         background-color: #4CAF50;
                         border: none;
                         color: white;
-                        padding: 10px 20px;
+                        padding: 12px 20px;
                         text-align: center;
                         text-decoration: none;
                         display: inline-block;
@@ -63,9 +71,21 @@ async def root(request: Request):
                         cursor: pointer;
                         border-radius: 4px;
                         width: 100%;
+                        transition: background-color 0.3s;
                     }
                     button:hover {
                         background-color: #45a049;
+                    }
+                    @media (max-width: 480px) {
+                        body {
+                            padding: 15px;
+                        }
+                        form {
+                            padding: 15px;
+                        }
+                        h1 {
+                            font-size: 24px;
+                        }
                     }
                 </style>
             </head>
@@ -85,6 +105,7 @@ async def root(request: Request):
     <html>
         <head>
             <title>Remote Wake-on-LAN</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -92,6 +113,8 @@ async def root(request: Request):
                     margin: 0 auto;
                     padding: 20px;
                     text-align: center;
+                    min-height: 100vh;
+                    position: relative;
                 }
                 button {
                     background-color: #4CAF50;
@@ -105,14 +128,16 @@ async def root(request: Request):
                     margin: 4px 2px;
                     cursor: pointer;
                     border-radius: 4px;
+                    transition: background-color 0.3s;
                 }
                 button:hover {
                     background-color: #45a049;
                 }
                 #status {
                     margin-top: 20px;
-                    padding: 10px;
+                    padding: 15px;
                     border-radius: 4px;
+                    font-size: 16px;
                 }
                 .success {
                     background-color: #dff0d8;
@@ -123,13 +148,41 @@ async def root(request: Request):
                     color: #a94442;
                 }
                 .logout {
-                    position: absolute;
+                    position: fixed;
                     top: 20px;
                     right: 20px;
                     background-color: #f44336;
+                    padding: 10px 20px;
+                    font-size: 14px;
                 }
                 .logout:hover {
                     background-color: #da190b;
+                }
+                @media (max-width: 480px) {
+                    body {
+                        padding: 15px;
+                    }
+                    h1 {
+                        font-size: 24px;
+                        margin-top: 40px;
+                    }
+                    button {
+                        width: 100%;
+                        margin: 8px 0;
+                        padding: 12px 20px;
+                    }
+                    .logout {
+                        position: fixed;
+                        top: 10px;
+                        right: 10px;
+                        padding: 8px 16px;
+                        font-size: 14px;
+                    }
+                    #status {
+                        margin-top: 15px;
+                        padding: 12px;
+                        font-size: 14px;
+                    }
                 }
             </style>
         </head>
